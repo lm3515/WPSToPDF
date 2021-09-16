@@ -1,4 +1,4 @@
-# Windows工具集：WPSToPDF
+# Windows工具集：利用WPS将文件转PDF
 * Copyright (c) 2021 厦门爱立得科技有限公司
 * Copyright (c) 2021 Richard Liu
 * 版本：1.0
