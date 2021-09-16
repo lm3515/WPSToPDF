@@ -38,12 +38,10 @@ namespace OfficeToPDF
 
             //忽略警告提示
             wps.DisplayAlerts = false;
-            Console.WriteLine(string.Format(@"正在转换 [{0}]
-      -> [{1}]", wpsFilename, pdfFilename));
+            Console.WriteLine(string.Format(@"正在转换 [{0}] -> [{1}]", wpsFilename, pdfFilename));
 
             //object missing = Type.Missing;
-            dynamic ppt = wps.Presentations.Open(wpsFilename, MsoTriState.msoCTrue,
-                    MsoTriState.msoCTrue, MsoTriState.msoCTrue);
+            dynamic ppt = wps.Presentations.Open(wpsFilename, MsoTriState.msoCTrue, MsoTriState.msoCTrue, MsoTriState.msoCTrue);
             ppt.SaveAs(pdfFilename, PpSaveAsFileType.ppSaveAsPDF, MsoTriState.msoTrue);
             ppt.Close();
         }
