@@ -19,8 +19,17 @@ namespace OfficeToPDF
 {
     class Program
     {
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject.ToString());
+            Environment.Exit(-1); //有此句则不弹“xxx已停止工作”异常对话框
+        }
+
+
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
             // 显示软件版本信息
             Version();
 
@@ -153,11 +162,11 @@ namespace OfficeToPDF
 
         static void Version()
         {
-            Console.WriteLine(@"OfficeToPDF - 将Office文档转换为PDF");
-            Console.WriteLine(@"Copyright (c) 2020 印记（深圳）网络有限公司");
-            Console.WriteLine(@"Copyright (c) 2020 Richard Liu");
-            Console.WriteLine(@"版本：1.0");
-            Console.WriteLine(@"支持的格式有：doc、docx、xls、xlsx、ppt、pptx、txt、text、rtf、html、htm、mhtml");
+            Console.WriteLine(@"OfficeToPDF - Convert documents to PDF");
+            Console.WriteLine(@"Copyright (c) 2021 Xiamen iLeadTek Technology Co., Ltd");
+            Console.WriteLine(@"Copyright (c) 2021 Richard Liu");
+            Console.WriteLine(@"Version：1.0." + "20210811");
+            Console.WriteLine(@"Supported formats：doc、docx、xls、xlsx、ppt、pptx、txt、text、rtf、html、htm、mhtml");
         }
     }
 }
