@@ -165,7 +165,7 @@ namespace OfficeToPDF
             Console.WriteLine(@"OfficeToPDF - Convert documents to PDF");
             Console.WriteLine(@"Copyright (c) 2021 Xiamen iLeadTek Technology Co., Ltd");
             Console.WriteLine(@"Copyright (c) 2021 Richard Liu");
-            Console.WriteLine(@"Version：1.0." + "20210811");
+            Console.WriteLine(@"Version：1.0." + DateTime.Now.ToString("yyyyMMdd"));
             Console.WriteLine(@"Supported formats：doc、docx、xls、xlsx、ppt、pptx、txt、text、rtf、html、htm、mhtml");
         }
     }
